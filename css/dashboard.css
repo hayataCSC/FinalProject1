@@ -1,0 +1,60 @@
+#control {
+    width: 200px;
+    height: 300px;
+    text-align: center;
+}
+
+#legendBox {
+    width: 100px;
+    height: 150px;
+}
+
+#country {
+    margin-left: 280px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.xLabel {
+    font-size: 17px;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: #e8e8e8;
+    padding: 10px;
+    text-align: right;
+    border-radius: 10px;
+}
+
+#tooltip1 {
+    position: absolute;
+    background-color: #e8e8e8;
+    padding: 10px;
+    text-align: right;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden1 {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: #34626c;
+    stroke-width: 3;
+}
+
+.off {
+    opacity: 0.1;
+}
+
+.firstGraphDiv {
+    background-color: red;
+}

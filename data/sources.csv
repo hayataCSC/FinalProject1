@@ -1,0 +1,10 @@
+country,variable,source,link
+US,Infration Rate,FRED,https://fred.stlouisfed.org/series/FPCPITOTLZGUSA
+US,Unemployment Rate,FRED,https://fred.stlouisfed.org/series/UNRATE
+US,M3,FRED,https://fred.stlouisfed.org/series/MABMM301USM189S
+JP,Infration Rate,FRED,https://fred.stlouisfed.org/series/FPCPITOTLZGJPN
+JP,Unemployment Rate,FRED,https://fred.stlouisfed.org/series/LRHUTTTTJPM156S
+JP,M3,FRED,https://fred.stlouisfed.org/series/MYAGM3JPM189N#0
+EU,Infration Rate,FRED,https://fred.stlouisfed.org/series/FPCPITOTLZGEMU
+EU,Unemployment Rate,FRED,https://fred.stlouisfed.org/series/LRHUTTTTEUM156S
+EU,M3,FRED,https://fred.stlouisfed.org/series/MABMM301EZM189S
