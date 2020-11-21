@@ -62,8 +62,8 @@ var drawPlot = function(d, graph, margins, xScale, yScale)
         .enter()
         .append("circle")
         //Position circles
-        .attr("cx", function(d){return margins.left + xScale(d.unemp);})
-        .attr("cy", function(d){return margins.top + yScale(d.inf);})
+        .attr("cx", function(d){return xScale(d.unemp);})
+        .attr("cy", function(d){return yScale(d.inf);})
         .attr("r", 4)
         .attr("class", function(d){
             if (d.year < 1970) {return "d60s"}
@@ -102,9 +102,17 @@ var drawPlot = function(d, graph, margins, xScale, yScale)
             d3.select("#year")
                 .text("Year: " + d.year)
             d3.select("#xValue")
-                .text("Unemp Rate: " + d.inf)
+                .text("Unemp Rate: " + d.unemp)
             d3.select("#yValue")
-                .text("Inf Rate: " + d.unemp)
+                .text("Inf Rate: " + d.inf)
+        })
+        //Hide tooltip
+        .on("mouseleave", function(d){
+            
+            console.log("mouse left");
+        
+            d3.select("#tooltip")
+                .classed("hidden", true)
         })
 }
 
@@ -119,7 +127,7 @@ var drawLabels = function(d, graph, margins, xScale, yScale)
         .text("Unemployment vs. Inflation Rate")
         .classed("title", true)
         .attr("text-anchor", "middle")
-        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + margins.top + ")")
+        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + (margins.top-20) + ")")
     
     //Draw x label
     d3.select(".unempS")
@@ -193,7 +201,7 @@ var drawLegends = function(d)
         .append("g")
         .attr("transform", function(aDecade, index)
         {
-            return "translate(0," + index*20 + ")";
+            return "translate(0," + index*40 + ")";
         })
         //Assign color
         .attr("fill", function(aDecade)
@@ -226,14 +234,14 @@ var drawLegends = function(d)
     
     //Add rectangle for each legend
     entries.append("rect")
-        .attr("width",10)
-        .attr("height",10)
+        .attr("width",30)
+        .attr("height",30)
     
     //Add name for each legend
     entries.append("text")
         .text(function(aDecade){return aDecade.name;})
-        .attr("x",15)
-        .attr("y",10)  
+        .attr("x",50)
+        .attr("y",20)  
 }
 
 //Define fnc to initialize unemployment scatter plot
@@ -323,7 +331,7 @@ var drawLabelsForR = function(d, graph, margins, xScale, yScale)
         .text("R btw Unemp and Inf")
         .classed("title", true)
         .attr("text-anchor", "middle")
-        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + margins.top + ")")
+        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + (margins.top-20) + ")")
     
     //Draw x label
     d3.select(".unempR")
@@ -431,9 +439,11 @@ var drawMoneyPlot = function(d, graph, margins, xScale, yScale)
         .data(d)
         .enter()
         .append("circle")
+        //Filter data
+        .filter(function(aYear) {return aYear.money})
         //Position circles
-        .attr("cx", function(d){return margins.left + xScale(d.money);})
-        .attr("cy", function(d){return margins.top + yScale(d.inf);})
+        .attr("cx", function(d){return xScale(d.money);})
+        .attr("cy", function(d){return yScale(d.inf);})
         .attr("r", 4)
         .attr("class", function(d){
             if (d.year < 1970) {return "d60s"}
@@ -472,9 +482,17 @@ var drawMoneyPlot = function(d, graph, margins, xScale, yScale)
             d3.select("#year1")
                 .text("Year: " + d.year)
             d3.select("#xValue1")
-                .text("Change in M: " + d.moneyR)
+                .text("Change in M: " + d.money.toFixed(3))
             d3.select("#yValue1")
-                .text("Inf Rate: " + d.unemp)
+                .text("Inf Rate: " + d.inf)
+        })
+        //Hide tooltip
+        .on("mouseleave", function(d){
+            
+            console.log("mouse left");
+        
+            d3.select("#tooltip1")
+                .classed("hidden1", true)
         })
 }
 
@@ -489,7 +507,7 @@ var drawMoneyLabels = function(d, graph, margins, xScale, yScale)
         .text("Money Supply vs. Inflation Rate")
         .classed("title", true)
         .attr("text-anchor", "middle")
-        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + margins.top + ")")
+        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + (margins.top-20) + ")")
     
     //Draw x label
     d3.select(".moneyS")
@@ -587,13 +605,8 @@ var drawLineForMoneyR = function(d, graph, margins, xScale, yScale)
     var line = d3.line()
         .defined(function(aYear){return aYear.moneyR;})
         .x(function(aYear) {
-            console.log("x: " + aYear.year);
-            console.log("scaled x: " + xScale(aYear.year));
             return xScale(aYear.year);})
         .y(function(aYear) {
-            console.log(aYear);
-            console.log("y: " + aYear.moneyR);
-            console.log("scaled y: " + yScale(aYear.moneyR));
             return yScale(aYear.moneyR);});
     
     //Create circles
@@ -622,7 +635,7 @@ var drawLabelsForMoneyR = function(d, graph, margins, xScale, yScale)
         .text("R btw Money and Inf")
         .classed("title", true)
         .attr("text-anchor", "middle")
-        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + margins.top + ")")
+        .attr("transform", "translate(" + (margins.left+graph.width/2) + "," + (margins.top-20) + ")")
     
     //Draw x label
     d3.select(".moneyR")
@@ -724,8 +737,8 @@ var successFnc = function(data)
     
     //Define screen variables
     var sizes = [
-    {width: 500, height: 500},
-    {top: 30, right: 30, bottom: 70, left: 70}
+    {width: 500, height: 430},
+    {top: 40, right: 30, bottom: 70, left: 80}
     ]
     
     d3.select("#us")

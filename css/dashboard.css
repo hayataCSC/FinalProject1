@@ -1,20 +1,44 @@
+body {
+    width: 1250px;
+    margin: 20px auto 0;
+    background-color: #e8e8e8;
+}
+
 #control {
+    float: left;
     width: 200px;
-    height: 300px;
+    height: 840px;
+    margin-right: 50px;
+}
+
+.graphSVG {
+    float: left;
+}
+
+#selector {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3 {
     text-align: center;
 }
 
-#legendBox {
-    width: 100px;
-    height: 150px;
+button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
 }
 
-#country {
-    margin-left: 280px;
+#legendBox {
+    margin-top: 30px;
 }
 
 .title {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .xLabel {
@@ -23,7 +47,7 @@
 
 #tooltip {
     position: absolute;
-    background-color: #e8e8e8;
+    background-color: white;
     padding: 10px;
     text-align: right;
     border-radius: 10px;
@@ -31,7 +55,7 @@
 
 #tooltip1 {
     position: absolute;
-    background-color: #e8e8e8;
+    background-color: white;
     padding: 10px;
     text-align: right;
     border-radius: 10px;

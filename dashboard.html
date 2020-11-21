@@ -6,18 +6,28 @@
     </head>
     <body>
         <div id="control">
-            <button id="us">US</button>
-            <button id="jp">Japan</button>
-            <button id="eu">EU</button>
-            <div id="legendBox">
-                <svg id="legend"></svg>
+            <div id="selector">
+                <h3 id="country">Select a country or region to display</h3>
+                <button id="us">US</button>
+                <button id="jp">Japan</button>
+                <button id="eu">EU</button>
+                <div id="legendBox">
+                    <svg id="legend"></svg>
+                </div>
             </div>
         </div>
-        <h2 id="country">Select a country or region to display</h2>
-        <svg id="firstGraph"></svg>
-        <svg id="secondGraph"></svg>
-        <svg id="thirdGraph"></svg>
-        <svg id="forthGraph"></svg>
+        <div class="graphSVG">
+            <svg id="firstGraph"></svg>
+        </div>
+        <div class="graphSVG">
+            <svg id="secondGraph"></svg>
+        </div>
+        <div class="graphSVG">
+            <svg id="thirdGraph"></svg>
+        </div>
+        <div class="graphSVG">
+            <svg id="forthGraph"></svg>
+        </div>
         <div id="tooltip" class="hidden">
             <div id="year"></div>
             <div id="xValue"></div>
