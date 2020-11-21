@@ -24,6 +24,7 @@ var drawTable = function(d)
     
     //Make link column
     rows.append("td")
+        .append("a")
         .text(function(aSource){return aSource.link;})
 }
 

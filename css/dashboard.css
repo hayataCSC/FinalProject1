@@ -20,10 +20,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-h3 {
-    text-align: center;
+#legend {
+    height: 400px;
 }
 
 button {

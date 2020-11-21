@@ -11,6 +11,9 @@ var clear = function(){
     
     //Clear elements from forth SVG
     d3.select(".moneyR").remove()
+    
+    //Clear legends
+    d3.select(".aLegend").remove()
 }
 
 //Get inflation rate
@@ -191,8 +194,7 @@ var drawLegends = function(d)
     //Create group for legends
     var legend = d3.select("#legend")
         .append("g")
-        .classed("legend", true)
-//        .attr("transform", "translate(" + (margins.left+10) + "," + (margins.top+10) + ")");
+        .classed("aLegend", true)
     
     //Bind each legend with category
     var entries = legend.selectAll("g")
