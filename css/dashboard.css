@@ -4,6 +4,12 @@ body {
     background-color: #e8e8e8;
 }
 
+#note {
+    font-size: 12px;
+    text-align: left;
+    color: #34626c;
+}
+
 #control {
     float: left;
     width: 200px;
@@ -23,8 +29,13 @@ body {
     text-align: center;
 }
 
+a {
+    display: block;
+    margin-top: 10px;
+}
+
 #legend {
-    height: 400px;
+    height: 230px;
 }
 
 button {
@@ -67,6 +78,10 @@ button {
 }
 
 .hidden1 {
+    display: none;
+}
+
+.hidden2 {
     display: none;
 }
 

@@ -1,0 +1,54 @@
+body {
+    background-color: #e8e8e8;
+    width: 1800px;
+}
+
+a {
+    display: inline-block;
+    margin: 30px 30px 30px 0;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+#title {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 25px;
+    text-align: left;
+    text-indent: 50px;
+}
+
+img {
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#graph1 {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#graph2 {
+    width: 50%;
+    float: left;
+    margin-right: 30px;
+}
+
+#graph3 {
+    width: 50%;
+    float: right;
+    margin-left: 30px;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto 100px;
+    text-align: center;
+}

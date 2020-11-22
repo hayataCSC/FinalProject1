@@ -180,6 +180,9 @@ var drawLegends = function(d)
 {
     console.log("drawLegends was called");
     
+    //Show up the note
+    d3.select("#note").classed("hidden2", false);
+    
     var decade = ["d60s", "d70s", "d80s", "d90s", "d00s", "d10s"];
     
     var decade = [
