@@ -30,7 +30,7 @@ var drawTable = function(d)
 }
 
 //Get data
-var citePromise = d3.csv("../data/sources.csv");
+var citePromise = d3.csv("data/sources.csv");
 
 //When data was found...
 var successfnc = function(d)
